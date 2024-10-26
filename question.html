@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+    crossorigin="anonymous"
+  />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"
+  ></script>
+  <link rel="stylesheet" href="wts.css" />
+  <link rel="icon" type="image/x-icon" href="Logo_last.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playwrite+MX:wght@100..400&display=swap"
+    rel="stylesheet"
+  />
+  <title>Activity_5</title>
+  <style>
+   
+    .imgdiv {
+      position: relative;
+    }
+    .input-container {
+      
+      position: absolute;
+      bottom: 17%;
+      left: 47%;
+      transform: translateX(-50%);
+      
+      /* width: 70%; */
+    }
+    .input-group {
+      
+    
+      width: 95%;
+      max-width: 7000px;
+      margin-bottom: 1%;
+    }
+    .input-group input {
+  /* padding: 5%; */
+  font-size: 3.5vw;
+  font-weight: 550;
+  border: 2px solid black;
+  text-align: center;
+  margin-right: 2%; /* Add margin to the right */
+}
+
+.input-group input:last-child {
+  margin-right: 0; /* Remove margin from the last input */
+}
+    .input-section input.invalid {
+      border-color: red;
+    }
+    
+   .answers{
+    margin-top: 2%;
+   }
+    .question {
+      position: absolute;
+      top: 8%;
+      left: 48%;
+      transform: translate(-50%, 0);
+      width: 75%;
+      color: black;
+      font-size: 1.5rem;
+      font-weight: 600;
+      text-align: center;
+      border-radius: 5px;
+    }
+    .smallbtn.active,
+    .smallbtn.default {
+      background-color: #f56c6c;
+      color: #ffffff;
+    }
+    
+    #questiondiv {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      text-align: center;
+    }
+    .messageContainer {
+      position: absolute;
+      bottom: 2%; /* Adjust to fit above input-section */
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      z-index: 10;
+      color: white;
+      /* Ensures it appears above other elements */
+    }
+    #secondImg {
+      position: absolute;
+      top: 28%;
+      left: 20%;
+    }
+    #nextbtn {
+      width: 100%;
+    }
+   
+    #input1{
+      background-color: aquamarine;
+    }
+    #input2{
+      background-color: rgb(127, 221, 255);
+    }
+    #input3{
+      background-color: rgb(248, 169, 132);
+    }
+    #input4{
+      background-color: rgb(249, 246, 159);
+    }
+    #input5{
+      background-color: rgb(246, 157, 235);
+    }
+    #input6{
+      background-color: rgb(127, 255, 133);
+    }
+    #submitbtn{
+      
+      margin-left: 30%;
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+    }
+    #nextbtn{
+      
+      margin-left: 30%;
+      border-radius: 50%;
+      width: 90px;
+      height: 90px;
+    }
+    .btn {
+      font-family: fantasy;
+  position: relative;
+  background-color: #007bff; 
+  color: white;
+  border: none;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.btn:active {
+  transform: translateY(4px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+      
+    
+  </style>
+   <script>
+    function playSound() {
+      const sound = document.getElementById("sound1");
+      sound.play();
+    }
+  </script>
+</head>
+<body>
+  <audio id="cheers">
+    <source src="cheers.mp3" type="audio/mpeg" />
+  </audio>
+  <audio id="sound" src="points.mp3"></audio>
+  <audio id="fail" src="fail.mp3"></audio>
+  <div
+    class="header"
+    style="
+      width: auto;
+      box-shadow: 5px 5px 10px rgb(0, 0, 0);
+      padding-bottom: 10px;
+    "
+  >
+    <img
+      src="Logo.png"
+      width="5%"
+      style="float: left; margin-top: 25px; text-align: left"
+      class="img-responsive"
+    />
+    <span>
+      <img
+        src="header.png"
+        width="30%"
+        height=""
+        class="img-responsive"
+        style="text-align: left"
+      />
+    </span>
+  </div>
+  <br />
+  <center>
+    <h1 id="heading">Addition and Subtraction</h1>
+   
+    
+    <div id="questionButtons" class="questionButtons"></div>
+   
+    <div class="maindiv container d-flex">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 imgdiv">
+        <div id="question" class="question"></div>
+        <img id="math_ques" src="question_img.jpg" width="100%" height="100%" />
+        <img id="secondImg" src="" style="width: 60%;height: 35%;" /> 
+        <div class="input-container" style="display: flex;">
+          <div class="input-group">
+            <input type="text" id="input1" class="form-control" placeholder="" />
+            <input type="text" id="input2" class="form-control" placeholder="" />
+            <input type="text" id="input3" class="form-control" placeholder="" />
+            <input type="text" id="input4" class="form-control" placeholder="" />
+            <input type="text" id="input5" class="form-control" placeholder="" />
+          </div>
+          <div class="btn-container">
+            <button id="submitbtn" class="btn btn-lg btn-primary">Submit</button>
+            <button id="nextbtn" class="btn btn-lg btn-primary" style="display: none;" onclick="newques()">Next</button>
+          </div>
+        </div>
+        
+        <!-- <div class="btn-container">
+          <button id="submitbtn" class="btn btn-lg btn-primary">Submit</button>
+          <button id="nextbtn" class="btn btn-lg btn-primary" style="display: none;" onclick="newques()">Next</button>
+        </div> -->
+        <div class="messageContainer mt-2">
+          <p id="message" class="message"></p>
+        </div>
+        
+      </div>
+    </div>
+
+    <script>
+      let questions;
+      let currentQuestion = 0;
+
+      async function fetchQuestions() {
+        try {
+          const response = await fetch('questions.json');
+          if (!response.ok) {
+            throw new Error('Failed to load questions');
+          }
+          questions = await response.json();
+        } catch (error) {
+          console.error('Error loading questions:', error);
+        }
+      }
+
+      function loadQuestion() {
+  const questionElement = document.getElementById('question');
+  const questionImage = document.getElementById('math_ques');
+  const secondImgElement = document.getElementById('secondImg');
+  const current = questions[currentQuestion];
+
+  questionElement.innerHTML = current.question;
+  questionImage.src = "question_img.jpg";
+
+  if (current.secondImg) {
+    secondImgElement.src = current.secondImg;
+    secondImgElement.style.display = 'block';
+  } else {
+    secondImgElement.style.display = 'none';
+  }
+
+  // Set input values based on options
+  const inputs = [
+    document.getElementById('input1'),
+    document.getElementById('input2'),
+    document.getElementById('input3'),
+    document.getElementById('input4'),
+    document.getElementById('input5')
+  ];
+
+  inputs.forEach(input => {
+    input.value = '';
+    input.readOnly = false;
+    input.style.cursor='auto';
+    input.classList.remove('invalid');
+  });
+  // Clear previous values and hide inputs if there are fewer options
+  inputs.forEach((input, index) => {
+    if (index < current.options.length && current.options[index].trim() !== "") {
+      input.value = current.options[index];
+      input.style.display = 'inline-block';
+      input.readOnly = true; 
+      input.style.cursor='no-drop';
+    } 
+  });
+
+  document.getElementById('message').innerHTML = '';
+  document.getElementById('nextbtn').style.display = 'none';
+  document.getElementById('submitbtn').style.display = 'inline-block';
+}
+
+function checkAnswers() {
+  const current = questions[currentQuestion];
+  const inputs = [
+    document.getElementById('input1'),
+    document.getElementById('input2'),
+    document.getElementById('input3'),
+    document.getElementById('input4'),
+    document.getElementById('input5')
+  ];
+
+  let allCorrect = true;
+
+  inputs.forEach((input, index) => {
+    if (input.value.trim() === current.answers[index]) {
+      input.classList.remove('invalid');
+    } else {
+      input.classList.add('invalid');
+      allCorrect = false;
+    }
+  });
+
+  if (allCorrect) {
+    document.getElementById('message').innerHTML = "Good Job! <div class='flip'>&#128512</div>";
+    document.getElementById('nextbtn').style.display = 'inline-block';
+    document.getElementById('submitbtn').style.display = 'none';
+    document.getElementById('sound').play();
+  } else {
+    document.getElementById('message').innerHTML = 'Try Again! <div class="flip">😎</div>';
+    
+    document.getElementById('fail').play();
+  }
+}
+
+      function newques() {
+        if (currentQuestion === questions.length - 1) {
+         
+          document.getElementById('math_ques').src = "last.jpg";
+          document.getElementById('question').innerHTML = '';
+          document.querySelectorAll('.form-control').forEach(input => input.style.display = 'none');
+          document.getElementById('message').style.display = 'none';
+          document.getElementById('nextbtn').style.display = 'none';
+          document.getElementById('questionButtons').style.display = 'none';
+          document.getElementById('secondImg').style.display = 'none';
+          
+          const buttons = document.querySelectorAll('.smallbtn');
+          buttons.forEach(button => button.classList.remove('active'));
+        } else {
+          currentQuestion++;
+          loadQuestion();
+          const buttons = document.querySelectorAll('.smallbtn');
+          buttons.forEach((button, index) => {
+            if (index === currentQuestion) {
+              button.classList.add('active');
+            } else {
+              button.classList.remove('active');
+            }
+          });
+        }
+      }
+
+      function abc(x) {
+        document.getElementById('heading').innerHTML = 'Addition and Subtraction';
+        document.getElementById('math_ques').src = 'question_img.jpg';
+        currentQuestion = x - 1;
+        loadQuestion();
+        const buttons = document.querySelectorAll('.smallbtn');
+        buttons.forEach(button => button.classList.remove('active'));
+        buttons[x - 1].classList.add('active');
+      }
+
+      window.onload = async function () {
+        await fetchQuestions();
+        loadQuestion();
+
+        const questionButtonsContainer = document.getElementById('questionButtons');
+        questions.forEach((_, index) => {
+          const button = document.createElement('button');
+          button.textContent = `Q${index + 1}`;
+          button.classList.add('smallbtn');
+          button.onclick = () => abc(index + 1);
+
+          if (index === 0) {
+            button.classList.add('active');
+          }
+
+          questionButtonsContainer.appendChild(button);
+        });
+
+        document.getElementById('submitbtn').onclick = () => {
+          checkAnswers();
+        };
+      };
+    </script>
+  </center>
+</body>
+</html>

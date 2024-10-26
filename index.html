@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+    crossorigin="anonymous"
+  />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"
+  ></script>
+  <link rel="stylesheet" href="wts.css" />
+  <link rel="icon" type="image/x-icon" href="Logo_last.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playwrite+MX:wght@100..400&display=swap"
+    rel="stylesheet"
+  />
+  <title>Activity_5</title>
+  <style>
+    .imgdiv {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.imgdiv img {
+  width: 100%;
+  height: auto;
+}
+
+
+
+.btn-next {
+  font-size: 1.7rem;
+  padding: 0.5% 2%;
+  position: absolute;
+  top: 86%;
+}
+.btn-sound{
+  position: absolute;
+    top: 20%;
+    left: 15%;
+}
+
+/* Media Queries for smaller screens */
+@media (max-width: 1024px) {
+  .text-overlay {
+    font-size: 1.5vw; /* Larger font size for smaller screens */
+    max-width: 40%; /* Adjust width on smaller screens */
+    top: 35%;
+  }
+  .btn-next{
+    position: absolute;
+    top: 75%;
+  }
+  .btn-sound{
+  position: absolute;
+    top: 15%;
+    left: 11%;
+}
+}
+
+@media (max-width: 768px) {
+  .text-overlay {
+    font-size: 1.2vw; /* Larger font size for smaller screens */
+    max-width: 40%; /* Adjust width on smaller screens */
+    top: 30%;
+  }
+  .btn-next{
+    position: absolute;
+    
+    top: 60%;
+  }
+  .btn-sound{
+  position: absolute;
+    top: 15%;
+    left: 13%;
+}
+}
+
+@media (max-width: 480px) {
+  .text-overlay {
+    font-size: 6vw; /* Even larger font size for very small screens */
+    max-width: 100%; /* Full width on very small screens */
+  }
+  
+}
+
+  </style>
+  <script>
+    function playSound() {
+      const sound = document.getElementById("sound1");
+      sound.play();
+    }
+  </script>
+</head>
+<body>
+  <audio id="cheers">
+    <source src="cheers.mp3" type="audio/mpeg" />
+  </audio>
+  <audio id="sound1" src="story.mp3"></audio>
+  <audio id="sound" src="points.mp3"></audio>
+  <audio id="fail" src="fail.mp3"></audio>
+  <div
+    class="header"
+    style="width: auto; box-shadow: 5px 5px 10px rgb(0, 0, 0); padding-bottom: 10px;"
+  >
+    <img
+      src="Logo.png"
+      width="5%"
+      style="float: left; margin-top: 25px; text-align: left"
+      class="img-responsive"
+    />
+    <span>
+      <img
+        src="header.png"
+        width="30%"
+        class="img-responsive"
+        style="text-align: left"
+      />
+    </span>
+  </div>
+  <br />
+  <center>
+    <div class="maindiv container d-flex">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 imgdiv">
+        <img id="math_ques" src="story.jpg" alt="Story" />
+        <div class="text-overlay">
+            
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-primary btn-next" onclick="window.location.href='question.html'">Next</button>
+    <button class="btn btn-success btn-sound" onclick="playSound()">Play Sound</button>
+  </center>
+</body>
+</html>

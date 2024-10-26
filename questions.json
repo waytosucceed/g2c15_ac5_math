@@ -1,0 +1,64 @@
+[
+  {
+    "questionNo": 1,
+    "question": "In the racing game, James completed several laps.<br>Fill in the empty box to find out how many laps he completed:",
+    "options":["12","+","5","=",""],
+    "answers": ["12","+","5","=","17"]
+
+  },
+  {
+    "questionNo": 2,
+    "question": "Jenny played a shooting game and scored points.<br>Fill in the empty box to find her score.",
+    "options":["13","-","7","=",""],
+    "answers": ["13","-","7","=","6"]
+    
+  },
+  {
+    "questionNo": 3,
+    "question": "One of their cousins tried a climbing game.<br>Fill in the empty box to find his score.",
+    "options":["17","-","13","=",""],
+    "answers": ["17","-","13","=","4"]
+  },
+  {
+    "questionNo": 4,
+    "question": "In the air hockey game, James scored several goals.<br>Fill in the empty box to find his score by making goals.",
+    "options":["23","+","7","=",""],
+    "answers": ["23","+","7","=","30"]
+  },
+  {
+    "questionNo": 5,
+    "question": " After playing the whack-a-mole game, Jenny had a number of hits. <br>Fill in the empty box to find her score.",
+    "options":["15","+","6","=",""],
+    "answers": ["15","+","6","=","21"]
+  },
+  {
+    "questionNo": 6,
+    "question": "Alex one of their cousin joined a basketball game and scored several baskets.<br>Fill in the empty box to find his score.",
+    "options":["29","-","27","=",""],
+    "answers": ["29","-","27","=","2"]
+  },
+  {
+    "questionNo": 7,
+    "question": "In a team game, they scored many points.<br>Fill in the empty box to find their points.",
+    "options":["26","+","6","=",""],
+    "answers": ["26","+","6","=","32"]
+  },
+  {
+    "questionNo": 8,
+    "question": "They all played a trivia game, scoring a certain amount of points.<br>Fill in the empty box to find their points.",
+    "options":["24","+","9","=",""],
+    "answers": ["24","+","9","=","33"]
+  },
+  {
+    "questionNo": 9,
+    "question": "In the air hockey game, James scored several goals.<br>Fill in the empty box to find his score.",
+    "options":["34","-","29","=",""],
+    "answers": ["34","-","29","=","5"]
+  },
+  {
+    "questionNo": 10,
+    "question": "After a long day of gaming, Jenny played a final round and scored points.Fill in the empty box to find her score.",
+    "options":["35","-","27","=",""],
+    "answers": ["35","-","27","=","8"]
+  }
+]
